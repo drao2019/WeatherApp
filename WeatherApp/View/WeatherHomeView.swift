@@ -89,6 +89,10 @@ struct WeatherHomeView: View {
             .alert(isPresented: $viewModel.showAlert, content: {
                 Alert(title: Text("\(viewModel.showErrorMessage)"))
             })
+            .onSubmit {
+                print("Keyboard return clicked")
+                viewModel.fetchWeatherReport(for: searchText)
+            }
         }
     }
 }
